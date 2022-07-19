@@ -1,0 +1,9 @@
+.home-section {
+    background-image: url("../../assets/header-bg-img.png");
+    height: auto;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* position: absolute; */
+    /* top: 0; */
+}
