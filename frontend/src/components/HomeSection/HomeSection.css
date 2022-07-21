@@ -4,6 +4,144 @@
     width: auto;
     background-repeat: no-repeat;
     background-size: contain;
-    /* position: absolute; */
-    /* top: 0; */
+}
+#home-content {
+  display: flex;
+  margin-left: 20%;
+  margin-right: 5%;
+  justify-content: space-between;
+}
+#home-content > img {
+  height: 75vh;
+}
+
+#home-content > #content {
+  display: grid;
+  align-content: center;
+  text-align: center;
+  width: 40vw;
+}
+#home-content > #content > #heading {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 75px;
+  color: #88e0d0;
+  text-align: center;
+}
+#home-content > #content > #about-text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+}
+button {
+  margin-top: 13px !important;
+  width: 210px;
+  height: 45px;
+  left: 1018px;
+  top: 556px;
+  border: none;
+  background: #88e0d0;
+  border-radius: 15px !important;
+  color: white;
+  font-weight: 700;
+} 
+
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.aboutimg {
+  height: auto;
+  max-width: 100%;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+  background: #88e0d0;
+}
+
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+}
+.made_by{
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 35px;
+  text-align: center;
 }

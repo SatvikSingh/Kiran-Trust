@@ -1,12 +1,17 @@
 import React from 'react'
+import Contact from '../../components/Contact/Contact'
+import DoctorSection from '../../components/DoctorSection/DoctorSection'
 import HomeSection from '../../components/HomeSection/HomeSection'
-import Header from '../Layout/Header/Header'
+import Footer from '../Layout/Footer/Footer'
 
 const Home = () => {
   return (
     <div>
       {/* <Header /> */}
       <HomeSection />
+      <DoctorSection/>
+      <Contact/>
+      <Footer/>
     </div>
   )
 }
