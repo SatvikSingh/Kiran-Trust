@@ -2,6 +2,7 @@ import React from "react";
 import "./HomeSection.css";
 import Header from "../../pages/Layout/Header/Header";
 import didi from "../../assets/didi.png";
+// import DoctorSection from "../DoctorSection/DoctorSection";
 const HomeSection = () => {
   return (
     <div className="home-section">
@@ -24,52 +25,26 @@ const HomeSection = () => {
           </div>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <div className="about-content">
-        <ul className="cards">
-          <li className="cards_item">
-            <div className="card">
-              <div className="card_image">
-                <img
-                  className="aboutimg"
-                  src="https://picsum.photos/500/300/?image=10"
-                  alt="ea"
-                />
-              </div>
-              <div className="card_content">
-                <h2 className="card_title">Card Grid Layout</h2>
-                <p className="card_text">
-                  Demo of pixel perfect pure CSS simple responsive card grid
-                  layout
-                </p>
-                <button className="btn card_btn">Read More</button>
-              </div>
-            </div>
-          </li>
-          <li className="cards_item">
-            <div className="card">
-              <div className="card_image">
-                <img
-                  className="aboutimg"
-                  src="https://picsum.photos/500/300/?image=10"
-                  alt="defr"
-                />
-              </div>
-              <div className="card_content">
-                <h2 className="card_title">Card Grid Layout</h2>
-                <p className="card_text">
-                  Demo of pixel perfect pure CSS simple responsive card grid
-                  layout
-                </p>
-                <button className="btn card_btn">Read More</button>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <div className="container">
+          <div className="product-card">
+            <img src="https://assets.codepen.io/2362831/ignitors.png" alt="" />
+          </div>
+
+          <div className="product-card">
+            <img
+              src="https://assets.codepen.io/2362831/capacitors.png"
+              alt=""
+            />
+          </div>
+
+          <div className="product-card">
+            <img
+              src="https://assets.codepen.io/2362831/UV+Air+Cleaners.png"
+              alt=""
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

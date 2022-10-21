@@ -175,3 +175,19 @@ nav ul li ul li a {
     display: block !important;
   }
 }
+
+@media (max-width: 1200px) {
+  img {
+    height: 70px;
+  }
+}
+
+@media (max-width: 860px) {
+  nav ul li a {
+    padding: 10px 15px 0 15px;
+    font-size: 15px;
+  }
+  img {
+    height: 60px;
+  }
+}
