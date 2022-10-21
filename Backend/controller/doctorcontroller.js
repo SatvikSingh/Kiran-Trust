@@ -201,23 +201,23 @@ exports.getuserdetail=async (req,res)=>{
 // Update Password or other details from user side
 exports.updateuser=async (req,res)=>{
     try{
-        let doctor=await Doctor.findById(req.doctor.id);
+        let doctor=await Doctor.findById(req.Doctor.id);
         // all other field will be autofilled handlled from frontend 
         doctor.name=req.body.name;
         doctor.email=req.body.email;
-        if(req.body.avatar!=""){
-            const imageId = doctor.images.public_id;
-            await cloudinary.v2.uploader.destroy(imageId);
-            const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
-                folder: "avatars",
-                width: 150,
-                crop: "scale",
-            });
-            doctor.images={
-                public_id: myCloud.public_id,
-                public_url: myCloud.secure_url,
-            }
-        }
+        // if(req.body.avatar!=""){
+        //     const imageId = doctor.images.public_id;
+        //     await cloudinary.v2.uploader.destroy(imageId);
+        //     const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+        //         folder: "avatars",
+        //         width: 150,
+        //         crop: "scale",
+        //     });
+        //     doctor.images={
+        //         public_id: myCloud.public_id,
+        //         public_url: myCloud.secure_url,
+        //     }
+        // }
         await doctor.save();
         res.status(200).json({
             success: true,
@@ -260,3 +260,88 @@ exports.updatepass=async (req,res)=>{
     }
 }
 
+
+exports.addslot=async (req,res)=>{
+    try{
+        let doctor=await Doctor.findById(req.Doctor.id);
+        let starttime=req.body.from;
+        let endtime=req.body.to;
+        let starth=starttime.substr(0,2);
+        let startmin=starttime.substr(3,2);
+        let endh=endtime.substr(0,2);
+        let endmin=endtime.substr(3,2);
+        if(endh<starth){
+            res.status(401).json({
+                success:false,
+                message:"Time Format is wrong"
+            });
+            return;
+        }else if(endh==starth && endmin<startmin){
+            res.status(401).json({
+                success:false,
+                message:"Time Format is wrong"
+            });
+            return;
+        }
+        let isoverlapping=false;
+        doctor.slots.forEach(element => {
+            let tempstarttime=element.from;
+            let tempendtime=element.to;
+            let tempstarth=tempstarttime.substr(0,2);
+            let tempstartmin=tempstarttime.substr(3,2);
+            let tempendh=tempendtime.substr(0,2);
+            let tempendmin=tempendtime.substr(3,2);
+            if(endh<tempstarth || starth>tempendh){
+                return;
+            }else if(endh==tempstarth && endmin<tempstartmin){
+                return;
+            }else if(starth==tempendh && startmin>tempendmin){
+                return;
+            }
+            isoverlapping=true;
+        });
+        if(isoverlapping===true){
+            res.status(401).json({
+                success:false,
+                message:"Slot Already Exists"
+            });
+            return;
+        }
+        let slot={
+            booked:req.body.booked,
+            from:req.body.from,
+            to:req.body.to
+        }
+        doctor.slots.push(slot);
+        await doctor.save();
+        res.status(200).json({
+            success:true,
+            message:"Slot Created Successfully"
+        });
+    }catch(e){
+        res.status(401).json({
+            success:false,
+            message:e.message
+        });
+    }
+}
+exports.delslot=async (req,res)=>{
+    try{
+        let doctor=await Doctor.findById(req.Doctor.id);
+        let slotid=req.query.slotid;
+        const newslotarray = doctor.slots.filter(
+            (slot) => slot.id.toString() !== slotid.toString()
+        );
+        doctor.slots=newslotarray;
+        await doctor.save();
+        res.status(200).json({
+            success:true,
+            message:"Slot Deleted Successfully"
+        });
+    }catch(e){
+        res.status(401).json({
+            success:false,
+            message:e.message
+        });
+    }
+}

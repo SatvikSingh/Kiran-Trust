@@ -8,10 +8,12 @@ router.get('/logout',doctorcontroller.logout);
 router.post('/login',doctorcontroller.login)
 router.post('/forgot',doctorcontroller.forgotpass);
 router.post('/changepass/:token',doctorcontroller.changepass);
-// router.put('/updateuser',middleware.islogin,usercontroller.updateuser);
+router.put('/updateuser',middleware.isdoctorlogin,doctorcontroller.updateuser);
 router.get('/userdetail',middleware.isdoctorlogin,doctorcontroller.getuserdetail);
 router.post('/updatepass',middleware.isdoctorlogin,doctorcontroller.updatepass);
-// router.post('/create-reviews/',middleware.islogin,usercontroller.createreviews);
+router.post('/addslot',middleware.isdoctorlogin,doctorcontroller.addslot);
+router.delete('/delslot',middleware.isdoctorlogin,doctorcontroller.delslot);
+
 
 
 module.exports=router;

@@ -3,6 +3,7 @@ const jwt=require('jsonwebtoken');
 const bcryptjs = require('bcryptjs');
 const nodemailer=require('../utlis/nodemailer');
 const cloudinary = require("cloudinary");
+const Doctor=require('../models/doctor');
 
 exports.signup=async (req,res)=>{
     try{
@@ -201,19 +202,19 @@ exports.updateuser=async (req,res)=>{
         // all other field will be autofilled handlled from frontend 
         user.name=req.body.name;
         user.email=req.body.email;
-        if(req.body.avatar!=""){
-            const imageId = user.images.public_id;
-            await cloudinary.v2.uploader.destroy(imageId);
-            const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
-                folder: "avatars",
-                width: 150,
-                crop: "scale",
-            });
-            user.images={
-                public_id: myCloud.public_id,
-                public_url: myCloud.secure_url,
-            }
-        }
+        // if(req.body.avatar!=""){
+        //     const imageId = user.images.public_id;
+        //     await cloudinary.v2.uploader.destroy(imageId);
+        //     const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+        //         folder: "avatars",
+        //         width: 150,
+        //         crop: "scale",
+        //     });
+        //     user.images={
+        //         public_id: myCloud.public_id,
+        //         public_url: myCloud.secure_url,
+        //     }
+        // }
         await user.save();
         res.status(200).json({
             success: true,
@@ -260,14 +261,16 @@ exports.updatepass=async (req,res)=>{
 
 exports.createreviews=async (req,res)=>{
     try{
-        let productid=req.body.productid;
+        let doctorid=req.query.doctorid;
+        // console.log(req.query);
         let userid=req.User.id;
-        let product=await Product.findById(productid);
-        if(!product){
-            res.status(401).json(`Product Does Not Exists!!`);
+        let doctor=await Doctor.findById(doctorid);
+        if(!doctor){
+            res.status(401).json(`Doctor Does Not Exists!!`);
+            return;
         }
         let isreviewed=false;
-        product.reviews.forEach(element => {
+        doctor.reviews.forEach(element => {
             if(element.user.toString()===userid.toString()){
                 element.rating=req.body.rating,
                 element.comment=req.body.comment
@@ -277,12 +280,12 @@ exports.createreviews=async (req,res)=>{
         });
         if(isreviewed===true){
             let avg=0;
-            product.reviews.forEach(element=>{
+            doctor.reviews.forEach(element=>{
                 avg+=element.rating;
             })
-            avg=avg/product.noofreviews;
-            product.ratings=avg;
-            await product.save();
+            avg=avg/doctor.noofreviews;
+            doctor.ratings=avg;
+            await doctor.save();
         }else{
             let review={
                 user:userid,
@@ -290,16 +293,15 @@ exports.createreviews=async (req,res)=>{
                 rating:req.body.rating,
                 comment:req.body.comment
             }
-            console.log(review);
-            product.reviews.push(review);
+            doctor.reviews.push(review);
             let avg=0;
-            product.reviews.forEach(element=>{
+            doctor.reviews.forEach(element=>{
                 avg+=element.rating;
             })
-            product.noofreviews=Number(product.noofreviews)+1;
-            avg=avg/product.noofreviews;
-            product.ratings=avg;
-            await product.save();
+            doctor.noofreviews=Number(doctor.noofreviews)+1;
+            avg=avg/doctor.noofreviews;
+            doctor.ratings=avg;
+            await doctor.save();
         }
         res.status(200).json({
             success:true

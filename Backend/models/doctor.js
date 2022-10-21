@@ -69,7 +69,24 @@ const doctorschema=new moongose.Schema({
     desc:{
         type:String,
         required:true
-    }
+    },
+    slots:[
+        {
+            booked:{
+                type:Boolean,
+                required:true
+            },
+            from:{
+                type:String,
+                required:true
+            },
+            to:{
+                type:String,
+                required:true
+            },
+        }
+    ],
+
 },{timestamps:true});
 
 doctorschema.pre("save", async function (next) {
