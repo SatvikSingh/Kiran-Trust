@@ -72,6 +72,10 @@ const doctorschema=new moongose.Schema({
     },
     slots:[
         {
+            user:{
+                type: moongose.Schema.ObjectId,
+                ref: "User",
+            },
             booked:{
                 type:Boolean,
                 required:true

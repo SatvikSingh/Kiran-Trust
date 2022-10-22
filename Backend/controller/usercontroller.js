@@ -313,3 +313,78 @@ exports.createreviews=async (req,res)=>{
         });
     }
 }
+exports.getslot=async (req,res)=>{
+    try{
+        let doctorid=req.params.doctorid;
+        let Slots= await Doctor.findById(doctorid);
+        if(!Slots){
+            res.status(401).json({
+                success:false,
+                message:"Doctor Not Found"
+            });
+            return;
+        }
+        res.status(200).json({
+            success: true,
+            available_slots:Slots.slots
+        });
+    }catch(e){
+        res.status(401).json({
+            success:false,
+            message:e.message
+        });
+    }
+}
+
+exports.bookslot=async (req,res)=>{
+    try{
+        let doctorid=req.params.doctorid;
+        let slotid=req.params.slotid;
+        let doctor=await Doctor.findById(doctorid);
+        if(!doctor){
+            res.status(401).json({
+                success:false,
+                message:"Doctor Not Found"
+            });
+            return;
+        }
+        let slotbooked=false;
+        doctor.slots.forEach(element => {
+            if(element._id.toString()===slotid.toString() && element.booked==false){
+                slotbooked=true;
+                element.booked=true;
+                element.user=req.User.id;
+                return;
+            }
+        });
+        if(slotbooked==false){
+            res.status(401).json({
+                success:false,
+                message:"Slot Not Found / It is Already Booked"
+            });
+        }else{
+            await doctor.save();
+            // custom message for patient and doctor --- todo
+            const message = `Your Meeting is Successfully Scheduled. \n\n`;
+            await nodemailer.main({
+                email:req.User.email,
+                subject:"Email for Meeting Details",
+                message:message
+            })
+            await nodemailer.main({
+                email:doctor.email,
+                subject:"Email for Meeting Details",
+                message:message
+            })
+            return res.status(200).json({
+                success:true,
+                message:"Slot Booked Successfully",
+            });
+        }
+    }catch(e){
+        res.status(401).json({
+            success:false,
+            message:e.message
+        });
+    }
+}

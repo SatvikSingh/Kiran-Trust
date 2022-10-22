@@ -12,6 +12,8 @@ router.put('/updateuser',middleware.islogin,usercontroller.updateuser);
 router.get('/userdetail',middleware.islogin,usercontroller.getuserdetail);
 router.post('/updatepass',middleware.islogin,usercontroller.updatepass);
 router.post('/create-reviews/',middleware.islogin,usercontroller.createreviews);
+router.get('/getslots/:doctorid',middleware.islogin,usercontroller.getslot);
+router.post('/bookslot/:doctorid/:slotid',middleware.islogin,usercontroller.bookslot);
 
 
 module.exports=router;
