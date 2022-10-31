@@ -273,13 +273,13 @@ exports.addslot=async (req,res)=>{
         if(endh<starth){
             res.status(401).json({
                 success:false,
-                message:"Time Format is wrong"
+                message:"Start time can't be later than end time"
             });
             return;
         }else if(endh==starth && endmin<startmin){
             res.status(401).json({
                 success:false,
-                message:"Time Format is wrong"
+                message:"Start time can't be later than end time"
             });
             return;
         }

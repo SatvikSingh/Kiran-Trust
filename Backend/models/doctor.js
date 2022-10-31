@@ -70,6 +70,10 @@ const doctorschema=new moongose.Schema({
         type:String,
         required:true
     },
+    lastReset: {
+        type: Date,
+        required: false
+    },
     slots:[
         {
             user:{

@@ -324,9 +324,44 @@ exports.getslot=async (req,res)=>{
             });
             return;
         }
+        let curr_date = new Date();
+        let last_date = Slots.lastReset;
+
+        if (last_date === null || last_date === undefined) {
+            Slots.lastReset = curr_date;
+            await Slots.save();
+        }
+        else {
+            let time_diff = (curr_date.getTime() - last_date.getTime()) / 86400000;
+
+            if (time_diff >= 1) {
+                Slots.slots.forEach(element => {           
+                    element.booked=false;
+                    return;
+                });
+                Slots.lastReset = curr_date;
+                await Slots.save();
+            }   
+        }
+
         res.status(200).json({
             success: true,
             available_slots:Slots.slots
+        });
+    }catch(e){
+        res.status(401).json({
+            success:false,
+            message:e.message
+        });
+    }
+}
+
+exports.getalldoctor=async (req,res)=>{
+    try{
+        let doctor=await Doctor.find();
+        res.status(200).json({
+            success:true,
+            doctors:doctor
         });
     }catch(e){
         res.status(401).json({
