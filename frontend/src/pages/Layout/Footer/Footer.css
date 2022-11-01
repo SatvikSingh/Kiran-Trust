@@ -41,7 +41,7 @@
 }
 
 .social-text {
-    color: white;
+    color: white !important;
     font-size: 18px;
     font-weight: 500;
 }

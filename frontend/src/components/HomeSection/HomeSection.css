@@ -293,8 +293,93 @@ h1 {
     }
   }
 
-  @media (max-width: 798px) {
-    #home-content #content .heading {
+  @media (max-width: 820px) {
+    #home-content #content #heading {
+      line-height: 45px;
+      margin-bottom: 10px;
+    }
+
+    #home-content #content #about-text {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    #home-content img {
+      height: 60vh;
+    }
+
+    #home-content #content #heading {
+      font-size: 35px;
+      line-height: 40px;
+      margin-bottom: 5px;
+    }
+
+    #home-content #content #about-text {
+      font-size: 11px;
+      line-height: 16px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    #home-content {
+      flex-direction: column;
+    }
+
+    #home-content img {
+      display: none;
+      /* height: 76vh;
+      width: 50vw;
+      margin-left: auto;
+      margin-right: 40px;
+      top: 10px;
+      margin-bottom: 20px; */
+    }
+
+    #home-content #content {
+      margin-top: 80px;
+      margin-left: 55px;
+      margin-right: 20px;
+    }
+
+    #home-content #content #heading {
+      font-size: 50px;
+      width: 400px;
+      line-height: 35px;
+      margin-bottom: 15px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    #home-content #content #heading {
+      font-size: 40px;
+      margin-left: 20px;
+      width: 400px;
+      line-height: 35px;
+      margin-bottom: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #home-content #content {
+      margin-left: 220px;
+      margin-top: 50px;
+    }
+
+    #home-content #content #heading {
+      font-size: 50px;
+      /* margin-left: 200px; */
+      width: 200px;
       line-height: 50px;
+      margin-bottom: 15px;
+    }
+
+    #home-content #content #about-text {
+      font-size: 15px;
+      line-height: 20px;
+      /* margin-left: 15px; */
+      width: 250px;
+      margin: 20px 0;
     }
   }
