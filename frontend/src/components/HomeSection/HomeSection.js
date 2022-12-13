@@ -4,7 +4,7 @@ import './HomeSection.css'
 const HomeSection = () => {
   return (
     <div>
-      <div class="container">
+      <div className="container">
         <section>
           <em>WELCOME TO NAME_HERE</em>
           <h1>Take the world's best quality Treatment</h1>
@@ -12,9 +12,10 @@ const HomeSection = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </h4>
-          <a href="#" class="btn1">
+          <center><a href="#" className="btn1">
             Learn More
           </a>
+          </center>
         </section>
       </div>
     </div>
