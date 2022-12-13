@@ -3,11 +3,12 @@ import Contact from '../../components/Contact/Contact'
 import DoctorSection from '../../components/DoctorSection/DoctorSection'
 import HomeSection from '../../components/HomeSection/HomeSection'
 import Footer from '../Layout/Footer/Footer'
+import Header from '../Layout/Header/Header'
 
 const Home = () => {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <HomeSection />
       <DoctorSection/>
       <Contact/>
