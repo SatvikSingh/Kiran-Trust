@@ -1,0 +1,183 @@
+
+/*SECTION2*/
+.section2 {
+  width: 100%;
+  margin: 5vh auto;
+}
+
+.section2 .cards {
+  justify-content: center;
+  margin: auto;
+  width: 90%;
+  display: flex;
+}
+
+.icon {
+  scale: 2.5;
+}
+
+.section2 .cards .card {
+  width: 24%;
+  margin: 20px;
+  text-align: Center;
+}
+
+.section2 .cards .card .fa {
+  font-size: 3em;
+  color: #01bcd4;
+}
+
+.section2 .cards .card p {
+  color: rgba(1, 1, 1, 0.7);
+}
+
+/*SECTION3*/
+.section3 {
+  width: 100%;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://i.ibb.co/Sft7gKp/bg2.webp");
+  background-size: cover;
+  position: relative;
+  padding: 3vh 0;
+  overflow: hidden;
+}
+
+.section3 .cards {
+  width: 50%;
+}
+
+.section3 .cards .card {
+  display: block;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.8);
+  width: 80%;
+  transition: 0.5s;
+  cursor: pointer;
+  box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
+}
+
+.section3 .cards .card:hover {
+  width: 90%;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.section3 .cards .card section {
+  padding: 1rem;
+}
+
+.section3 .cards .card section h4 {
+  color: gray;
+  font-weight: 200;
+}
+
+.section3 .cards .card section h1 {
+  color: #167ce9;
+}
+
+.section3 .content {
+  position: absolute;
+  top: 20vh;
+  right: 2vw;
+  width: 40%;
+}
+
+.section3 .content h1 {
+  font-size: 2.5em;
+}
+
+.section3 .content p {
+  line-height: 1.4em;
+  letter-spacing: 0.08em;
+  font-size: 1.4em;
+  color: rgba(1, 1, 1, 0.7);
+}
+
+
+@media (max-width: 920px) {
+  table td {
+    display: block;
+    width: 100%;
+  }
+  .title_header {
+    width: 90%;
+  }
+  .title_header h1 {
+    font-size: 1.5em;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 10vh 0;
+  }
+  .container section {
+    position: relative;
+    top: 5vh;
+    margin: 1rem;
+    width: 90%;
+  }
+  .container section h1 {
+    font-size: 1.5em;
+  }
+  .section1 td:nth-child(1) {
+    width: 100%;
+    display: block;
+  }
+  .section1 .form {
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.5);
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    top: 0vh;
+  }
+  .section1 td:nth-child(2) {
+    padding: 10vh 0;
+  }
+  .section2 .cards {
+    margin: auto;
+    width: 90%;
+    display: block;
+  }
+
+  .section2 .cards .card {
+    width: 90%;
+    margin: 20px;
+    text-align: Center;
+  }
+  .section3 .cards {
+    width: 100%;
+  }
+  .section3 .cards .card {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .section3 .content {
+    position: relative;
+    top: 5vh;
+    left: 1vw;
+    width: 100%;
+  }
+  .section3 .content h1 {
+    font-size: 1.5em;
+    padding: 0 1rem;
+  }
+
+  .section3 .content p {
+    font-size: 0.9em;
+    letter-spacing: 0.08em;
+    line-height: 1.4em;
+    padding: 0 1rem;
+  }
+  .section4 .column {
+    float: left;
+    width: 50%;
+    margin: 10px 0;
+  }
+}

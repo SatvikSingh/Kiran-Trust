@@ -29,8 +29,6 @@
   letter-spacing: 0.09em;
 }
 
-
-
 /*CONTAINER*/
 .container {
   width: 100%;
@@ -42,7 +40,7 @@
 
 .container section {
   position: absolute;
-  top: 10vh;
+  top: 25vh;
   margin: 2rem;
   width: 50%;
 }
