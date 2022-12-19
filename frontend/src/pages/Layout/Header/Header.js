@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import logo from "../../../assets/company-logo.png";
+import logo from "../../../assets/company-logo-color.png";
 import script from "./HeaderScript.js";
 const Header = () => {
   return (

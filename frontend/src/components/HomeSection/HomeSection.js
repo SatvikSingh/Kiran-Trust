@@ -6,8 +6,7 @@ const HomeSection = () => {
     <div>
       <div className="container">
         <section>
-          <em>WELCOME TO NAME_HERE</em>
-          <h1>Take the world's best quality Treatment</h1>
+          <h1><span className="mental">Mental</span> <span className="health">Health</span></h1>
           <h4>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.

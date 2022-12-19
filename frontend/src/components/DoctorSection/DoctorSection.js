@@ -5,7 +5,7 @@ const DoctorSection = () => {
     <div>
       <section className="section4">
         <div className="title_header">
-          <h1>Our Gallery Portfolio</h1>
+          <h1>Our Doctors</h1>
         </div>
         <div className="row">
           <div className="column">

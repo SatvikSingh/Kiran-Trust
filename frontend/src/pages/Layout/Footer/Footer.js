@@ -36,7 +36,7 @@ const Footer = () => {
         <div class="office-des">
           <p>here are <br /> many variations of passages<br />of Lorem Ipsum<br />available</p>
           
-         <a href="#">manikmaity.haker2003@gmail.com</a>
+         <a href="#">kirantrustindia@gmail.com</a>
           
           <p class = "num">+91-9999999999</p>
         </div>
@@ -81,7 +81,7 @@ const Footer = () => {
     </div>
     <div class="copyright">
     <hr></hr>
-    <p>© Copyright 2022 Manik Maity.</p>
+    <p>© Copyright 2022 Kiran Trust.</p>
     </div>
   </footer>
     </div>

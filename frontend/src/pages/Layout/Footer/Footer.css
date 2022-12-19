@@ -11,8 +11,8 @@ footer {
   color: #fff;
   background-image: linear-gradient(
     90deg,
-    rgb(43, 222, 139) 0%,
-    rgb(34, 173, 219) 100%
+    #37637e 0%,
+    #4983a7 100%
   );
   position: relative;
   width: 100%;
@@ -21,49 +21,6 @@ footer {
   font-size: 0.8rem;
 }
 
-@media (max-width: 960px) {
-  footer {
-    width: 100%;
-    top: 120px;
-  }
-
-  .main {
-    margin: 50px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .logo {
-    grid-column: 1/3;
-  }
-
-  .office {
-    grid-column: 3/5;
-  }
-  .link {
-    grid-column: 1/3;
-  }
-}
-
-@media (max-width: 660px) {
-  .main {
-    gap: 10px;
-    margin: 0;
-  }
-
-  .icons {
-    display: flex;
-  }
-
-  .row {
-    grid-column: 1/4;
-  }
-}
-
-.manik {
-  width: 120px;
-}
 .main {
   margin: 50px;
   padding-top: 20px;
@@ -72,9 +29,15 @@ footer {
   gap: 50px;
   grid-template-columns: repeat(4, 1fr);
 }
+
 .row {
   margin-top: 50px;
 }
+
+.manik {
+  width: 120px;
+}
+
 .footer-header {
   font-size: 1.5rem;
   margin-bottom: 20px;
@@ -110,7 +73,7 @@ footer {
 }
 
 .link-des a:hover {
-  color: #fb2576;
+  color: #98a8f8;
   transition: linear 0.3s;
 }
 
@@ -121,7 +84,12 @@ footer {
 }
 
 .mail-icon {
+    margin-top: 10px;
     margin-right: 10px;
+}
+
+::placeholder {
+  color: white;
 }
 
 .btn-know {
@@ -180,8 +148,8 @@ input[type="mail"] {
 }
 .icons a:hover {
   color: #fff;
-  background-color: #fb2576;
-  border-color: #fb2576;
+  background-color: #98a8f8;
+  border-color: #98a8f8;
 }
 .newsletter-des {
   display: flex;
@@ -202,4 +170,52 @@ hr {
 
 .copyright p {
   padding: 20px;
+}
+
+@media (max-width: 960px) {
+  footer {
+    width: 100%;
+    top: 120px;
+  }
+
+  .main {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .logo {
+    grid-column: 1/3;
+  }
+
+  .office {
+    grid-column: 3/5;
+  }
+  .link {
+    grid-column: 1/3;
+  }
+  .newsletter {
+    grid-column: 3/5;
+  }
+}
+
+@media (max-width: 660px) {
+  .main {
+    gap: 10px;
+    margin: 0;
+    display: grid;
+    margin-left: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .row {
+    grid-column-start: 1;
+  }
 }
