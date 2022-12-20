@@ -9,12 +9,10 @@ import Header from '../Layout/Header/Header'
 const Home = () => {
   return (
     <div>
-      <Header />
       <HomeSection />
       <AboutSection/>
       <DoctorSection/> 
       <Contact/>
-      <Footer/>
     </div>
   )
 }
