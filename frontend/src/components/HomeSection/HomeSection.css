@@ -42,6 +42,7 @@
   top: 27vh;
   margin: 2rem;
   width: 43%;
+  justify-content: center;
 }
 
 .container section h1 {

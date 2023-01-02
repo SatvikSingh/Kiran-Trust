@@ -7,25 +7,12 @@ const Doctor=require('../models/doctor');
 
 exports.signup=async (req,res)=>{
     try{
-        // const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
-        //     folder: "avatars",
-        //     width: 150,
-        //     crop: "scale",
-        // });
         if(req.body.password===req.body.cpassword){
             const { name, email, password } = req.body;
             let user = await User.create({
                 name,
                 email,
                 password,
-                images: {
-                    public_id: req.body.images.public_id,
-                    public_url: req.body.images.public_url,
-                },
-                // images: {
-                //     public_id: myCloud.public_id,
-                //     public_url: myCloud.secure_url,
-                // },
             });
             if(user){
                 var token = jwt.sign({id:user._id}, process.env.Secret_key);

@@ -18,16 +18,6 @@ const userschema=new moongose.Schema({
         minlength:[8,"Password should be minimum of length 8"],
         required:[true,"Please Enter Password"]    
     },
-    images:{
-        public_id:{
-            type:String,
-            required:true
-        },
-        public_url:{
-            type:String,
-            required:true
-        }
-    },
     role:{
         type:String,
         default:"user"
