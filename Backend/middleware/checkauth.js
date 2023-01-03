@@ -4,10 +4,11 @@ const jwt=require('jsonwebtoken');
 exports.islogin=async (req,res,next)=>{
     try{
         const { token } = req.cookies;
+        console.log(req.cookies);
         if(token===undefined){
             return res.status(401).send({
                 success:false,
-                messgae:"Login First"
+                message:"Login First"
             });
         }
         else{
@@ -37,7 +38,7 @@ exports.isdoctorlogin=async (req,res,next)=>{
         if(token===undefined){
             return res.status(401).send({
                 success:false,
-                messgae:"Login First"
+                message:"Login First"
             });
         }
         else{
@@ -67,7 +68,7 @@ exports.isadmin=async (req,res,next)=>{
     if(token===undefined){
         return res.status(401).send({
             success:false,
-            messgae:"Login First"
+            message:"Login First"
         });
     }
     else{
@@ -79,7 +80,7 @@ exports.isadmin=async (req,res,next)=>{
         }else{
             return res.status(401).send({
                 success:false,
-                messgae:"Admin Only"
+                message:"Admin Only"
             });
         }
     }
