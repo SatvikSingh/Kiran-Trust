@@ -15,6 +15,8 @@ export const loginAction = (user) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
     const config = {
+      withCredentials: true,
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -23,7 +25,7 @@ export const loginAction = (user) => async (dispatch) => {
       "http://localhost:3601/user/login",
       user,
       config,
-      { withCredentials: true }
+      { withCredentials: true, credentials: "include" }
     );
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
   } catch (err) {
@@ -34,12 +36,16 @@ export const loginAction = (user) => async (dispatch) => {
 export const registerAction = (user) => async (dispatch) => {
   try {
     dispatch({ type: REGISTER_REQUEST });
-    const config = { headers: { "Content-Type": "application/json" } };
+    const config = {
+      withCredentials: true,
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+    };
     const { data } = await Axios.post(
       "http://localhost:3601/user/signup",
       user,
       config,
-      { withCredentials: true }
+      { withCredentials: true, credentials: "include" }
     );
     dispatch({ type: REGISTER_SUCCESS, payload: data.user });
   } catch (err) {
@@ -50,11 +56,15 @@ export const registerAction = (user) => async (dispatch) => {
 export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_REQUEST });
-    const config = { headers: { "Content-Type": "application/json" } };
+    const config = {
+      withCredentials: true,
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+    };
     const { data } = await Axios.get(
       "http://localhost:3601/user/userdetail",
       config,
-      { withCredentials: true }
+      { withCredentials: true, credentials: "include" }
     );
     dispatch({ type: LOAD_SUCCESS, payload: data.user });
   } catch (err) {
