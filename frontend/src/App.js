@@ -6,7 +6,11 @@ import Dashboard from './pages/UserDashboard/UserDashboard';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadUser } from './Redux/Actions/UserActions';
+import ProtectedRoute from './Route/ProtectedRoute'
+
+
 function App() {
+
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(loadUser())
@@ -17,10 +21,13 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/login' element={<LoginSignup/>} />
-        <Route exact path='/dashboard' element={<Dashboard/>} />
+        <Route exact path='/dashboard' element={<ProtectedRoute/>}>
+            <Route exact path='/dashboard' element={<Dashboard/>}/>
+        </Route>
       </Routes>
     </Router>
   );
 }
 
 export default App;
+

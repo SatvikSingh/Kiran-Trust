@@ -4,11 +4,11 @@ const ContactSection = () => {
   return (
     <div>
       <section id="contact">
-        <div class="contact-box">
-          <div class="contact-links">
+        <div className="contact-box">
+          <div className="contact-links">
             <h2>Contact Us</h2>
-            <div class="links">
-              <div class="link">
+            <div className="links">
+              <div className="link">
                 <a>
                   <img
                     src="https://i.postimg.cc/m2mg2Hjm/linkedin.png"
@@ -16,7 +16,7 @@ const ContactSection = () => {
                   />
                 </a>
               </div>
-              <div class="link">
+              <div className="link">
                 <a>
                   <img
                     src="https://i.postimg.cc/YCV2QBJg/github.png"
@@ -24,7 +24,7 @@ const ContactSection = () => {
                   />
                 </a>
               </div>
-              <div class="link">
+              <div className="link">
                 <a>
                   <img
                     src="https://i.postimg.cc/W4Znvrry/codepen.png"
@@ -32,7 +32,7 @@ const ContactSection = () => {
                   />
                 </a>
               </div>
-              <div class="link">
+              <div className="link">
                 <a>
                   <img
                     src="https://i.postimg.cc/NjLfyjPB/email.png"
@@ -42,21 +42,21 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-          <div class="contact-form-wrapper">
+          <div className="contact-form-wrapper">
             <form>
-              <div class="form-item">
+              <div className="form-item">
                 <input type="text" name="sender" required />
                 <label>Name:</label>
               </div>
-              <div class="form-item">
+              <div className="form-item">
                 <input type="text" name="email" required />
                 <label>Email:</label>
               </div>
-              <div class="form-item">
-                <textarea class="" name="message" required></textarea>
+              <div className="form-item">
+                <textarea className="" name="message" required></textarea>
                 <label>Message:</label>
               </div>
-              <button class="submit-btn">Send</button>
+              <button className="submit-btn">Send</button>
             </form>
           </div>
         </div>

@@ -4,7 +4,6 @@ const jwt=require('jsonwebtoken');
 exports.islogin=async (req,res,next)=>{
     try{
         const { token } = req.cookies;
-        console.log(req.cookies);
         if(token===undefined){
             return res.status(401).send({
                 success:false,

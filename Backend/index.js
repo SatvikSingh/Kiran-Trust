@@ -5,14 +5,14 @@ const cloudinary=require('cloudinary');
 const bodyparser=require('body-parser');
 const fileupload=require('express-fileupload')
 const cors = require('cors');
-
+app.use(cors({origin:"http://localhost:3000",Credential:true}));
 dotenv.config({path:"config/config.env"})
 app.use(Express.json());
 var cookieParser = require('cookie-parser')
 app.use(cookieParser());
 app.use(bodyparser.urlencoded({extended:true}))
 app.use(fileupload());
-app.use(cors());
+
 
 app.use(require('./router/index.js'));
 const mongoose = require('mongoose');
