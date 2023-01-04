@@ -1,12 +1,12 @@
-const Express = require("express");
-const app = Express();
-const dotenv = require("dotenv");
-const cloudinary = require("cloudinary");
-const bodyparser = require("body-parser");
-const fileupload = require("express-fileupload");
-const cors = require("cors");
+const Express=require("express");
+const app=Express();
+const dotenv=require('dotenv')
+const cloudinary=require('cloudinary');
+const bodyparser=require('body-parser');
+const fileupload=require('express-fileupload')
+const cors = require('cors');
 app.use(cors());
-dotenv.config({ path: "config/config.env" });
+dotenv.config({path:"config/config.env"})
 app.use(Express.json());
 var cookieParser = require("cookie-parser");
 app.use(cookieParser());

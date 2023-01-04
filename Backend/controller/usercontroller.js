@@ -69,6 +69,10 @@ exports.login = async (req, res) => {
           httpOnly: true,
           expiresIn: 7 * 24 * 60 * 60 * 1000, // 7 DAYS
         });
+        // res.send("Cookie set successfully");
+        // console.log(token);
+        // console.log(req.cookies);
+        // console.log(res.cookie());
         res.status(200).json({
           success: true,
           user,

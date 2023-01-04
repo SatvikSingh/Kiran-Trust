@@ -16,7 +16,7 @@ const UserDashboard = () => {
     if (isAuth === false) {
       history(redirect);
     }
-  }, [history, isAuth]);
+  }, [history, isAuth, redirect]);
   return (
     <Fragment>
       {loading ? (
@@ -25,7 +25,7 @@ const UserDashboard = () => {
         <Fragment>
           <MetaData title={`${userInfo.name}'s Profile`} />
           <div>
-            name
+            name 
             {userInfo.name}
           </div>
         </Fragment>
