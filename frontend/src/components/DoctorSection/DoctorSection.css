@@ -25,24 +25,10 @@
 
 .section4 .column {
   float: left;
-  width: 25%;
-  margin: 10px 0;
+  width: auto;
+  margin: 0px 0;
 }
 
-.section4 img {
-  margin-bottom: -4px;
-  width: 100%;
-  height: auto;
-}
-
-.section4 img.hover-shadow {
-  transition: 0.3s;
-}
-
-.hover-shadow:hover {
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 @media (max-width: 920px) {
   table td {
