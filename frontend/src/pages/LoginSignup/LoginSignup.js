@@ -14,7 +14,7 @@ const LoginSignup = () => {
   const dispatch = useDispatch();
   const history = useNavigate();
   const location = useLocation();
-  const { error, loading, userInfo, isAuth } = useSelector(
+  const { error, loading, isAuth } = useSelector(
     (state) => state.user
   );
   const [userlogin, setuserlogin] = useState({
@@ -82,8 +82,8 @@ const LoginSignup = () => {
                   >
                     <h2 className="title">Sign in</h2>
                     <div className="input-field">
-                      <PersonIcon className="icon" />
-                      <input
+                      <PersonIcon className="loginicon" />
+                      <input className="logininput"
                         type="text"
                         placeholder="Username"
                         value={userlogin.email}
@@ -93,8 +93,8 @@ const LoginSignup = () => {
                       />
                     </div>
                     <div className="input-field">
-                      <LockIcon className="icon" />
-                      <input
+                      <LockIcon className="loginicon" />
+                      <input className="logininput"
                         type="password"
                         placeholder="Password"
                         name="password"
@@ -112,8 +112,8 @@ const LoginSignup = () => {
                   >
                     <h2 className="title">Sign up</h2>
                     <div className="input-field">
-                      <PersonIcon className="icon" />
-                      <input
+                      <PersonIcon className="loginicon" />
+                      <input className="logininput"
                         type="text"
                         placeholder="Name"
                         value={userregister.name}
@@ -123,8 +123,8 @@ const LoginSignup = () => {
                       />
                     </div>
                     <div className="input-field">
-                      <EmailIcon className="icon" />
-                      <input
+                      <EmailIcon className="loginicon" />
+                      <input className="logininput"
                         type="email"
                         placeholder="Email"
                         value={userregister.email}
@@ -134,8 +134,8 @@ const LoginSignup = () => {
                       />
                     </div>
                     <div className="input-field">
-                      <LockIcon className="icon" />
-                      <input
+                      <LockIcon className="loginicon" />
+                      <input className="logininput"
                         type="password"
                         placeholder="Password"
                         value={userregister.password}
@@ -145,8 +145,8 @@ const LoginSignup = () => {
                       />
                     </div>
                     <div className="input-field">
-                      <LockIcon className="icon" />
-                      <input
+                      <LockIcon className="loginicon" />
+                      <input className="logininput"
                         type="password"
                         placeholder="Confirm Password"
                         value={userregister.cpassword}

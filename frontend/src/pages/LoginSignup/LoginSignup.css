@@ -7,7 +7,7 @@
 }
 
 body,
-input {
+.logininput {
   font-family: "Poppins", sans-serif;
 }
 
@@ -39,7 +39,11 @@ input {
   z-index: 5;
 }
 
-form {
+
+
+form.sign-up-form {
+  opacity: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,12 +55,16 @@ form {
   grid-row: 1 / 2;
 }
 
-form.sign-up-form {
-  opacity: 0;
-  z-index: 1;
-}
-
 form.sign-in-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0rem 5rem;
+  transition: all 0.2s 0.7s;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   z-index: 2;
 }
 
@@ -78,8 +86,7 @@ form.sign-in-form {
   padding: 0 0.4rem;
   position: relative;
 }
-
-.icon {
+.loginicon {
   text-align: center;
   line-height: 10px;
   color: #acacac;
@@ -89,7 +96,7 @@ form.sign-in-form {
   margin-top: 13px;
 }
 
-.input-field input {
+.input-field .logininput {
   background: none;
   outline: none;
   border: none;
@@ -99,7 +106,7 @@ form.sign-in-form {
   color: #333;
 }
 
-.input-field input::placeholder {
+.input-field .logininput::placeholder {
   color: #aaa;
   font-weight: 500;
 }

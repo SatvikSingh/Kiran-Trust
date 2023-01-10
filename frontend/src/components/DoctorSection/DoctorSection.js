@@ -12,48 +12,56 @@ const DoctorSection = () => {
             <img
               src="https://i.ibb.co/Sft7gKp/bg2.webp"
               className="hover-shadow cursor"
+              alt="doctorimg"
             />
           </div>
           <div className="column">
             <img
               src="https://i.ibb.co/Sft7gKp/bg2.webp"
               className="hover-shadow cursor"
+              alt="doctorimg"
             />
           </div>
           <div className="column">
             <img
               src="https://i.ibb.co/Sft7gKp/bg2.webp"
               className="hover-shadow cursor"
+              alt="doctorimg"
             />
           </div>
           <div className="column">
             <img
               src="https://i.ibb.co/Sft7gKp/bg2.webp"
               className="hover-shadow cursor"
+              alt="doctorimg"
             />
           </div>
           <div className="column">
             <img
               src="https://i.ibb.co/Sft7gKp/bg2.webp"
               className="hover-shadow cursor"
+              alt="doctorimg"
             />
           </div>
           <div className="column">
             <img
               src="https://i.ibb.co/Sft7gKp/bg2.webp"
               className="hover-shadow cursor"
+              alt="doctorimg"
             />
           </div>
           <div className="column">
             <img
               src="https://i.ibb.co/Sft7gKp/bg2.webp"
               className="hover-shadow cursor"
+              alt="doctorimg"
             />
           </div>
           <div className="column">
             <img
               src="https://i.ibb.co/Sft7gKp/bg2.webp"
               className="hover-shadow cursor"
+              alt="doctorimg"
             />
           </div>
         </div>

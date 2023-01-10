@@ -13,13 +13,13 @@ const Header = () => {
         </div>
         <nav>
           <div className="nav-mobile">
-            <a id="nav-toggle" href="#!">
+            <a id="nav-toggle" href="http://localhost:3000/">
               <span></span>
             </a>
           </div>
           <ul className="nav-list">
             <li>
-              <a className="link hover-2" href="#!">
+              <a className="link hover-2" href="http://localhost:3000/">
                 Home
               </a>
             </li>
